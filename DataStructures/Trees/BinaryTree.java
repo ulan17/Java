@@ -80,6 +80,22 @@ class Tree{
 	}
 
 	/**
+	 * Recursive Method to find a Node with a certain value
+	 *
+	 * @param root Node, key Value being looked for
+	 * @return The node if it finds it
+	 */
+	public int findNode(Node root, int key) {
+		if(root.data == key) {
+			return root.data;
+		} else if(root.data > key) {
+			return findNode(root.left, key);
+		} else {
+			return findNode(root.right, key);
+		}
+	}
+
+	/**
 	* Inserts certain value into the Binary Tree
 	*
 	* @param value Value to be inserted
